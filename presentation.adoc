@@ -1,0 +1,128 @@
+= Command line nuts
+Emmanuel Bernard
+:backend: revealjs
+:revealjs_theme: night
+:revealjs_controls: false
+:revealjs_progress: false
+:revealjs_history: true
+:revealjs_transition: default
+:not revealjs_parallaxBackgroundImage: images/example.jpg
+:not revealjs_parallaxBackgroundSize: 2100px 900px
+
+== Command line nuts
+
+Give yourself to the +#bash+ side +
+Command line tools for busy developers
+
+== Emmanuel Bernard
+
+Data dude at Red Hat +
+Open Source coder +
+Mac OS X user
+
+== Why did this happen?
+
+Slow computer +
+Snail IO and Apple Mail atrociously slow +
+  +
+Tried to avoid UI as much as possible +
+Started living in terminal
+
+[data-background="images/beard-dark.jpg"]
+== Warnings
+
+You *will* waste a lot of time setting this up +
+Forget (obvious) ROI +
+  +
+More fluid in your workflow +
+It's a lot of fun!
+
+== Fundamentals
+
+== Terminal
+
+Mac OS X +
+  +
+iTerm +
+Apple Terminal +
+TotalTerminal
+
+== Package installer
+
+*Linux*: you're good to go :) +
+*Windows*: Cygwin +
+*Mac OS X*: brew +
+
+[source, language="bash"]
+--
+brew update
+brew upgrade
+
+brew install tmux
+--
+
+== Editor
+
+Vim +
+  +
+[source]
+--
+[action][repeatition multiplier]movement
+d2f.
+delete up to the second dot
+--
+
+Let's demo Vim.
+
+== Automation! Automation! Automation!
+
+Learn _bash_ (or _PowerShell_) +
+  +
+Example of http://lescastcodeurs.com[Les Cast Codeurs] release script
+
+== Learn your dotfiles
+
+Store them in Git +
+Get a new machine much faster and consistent
+
+For example .bash_profile .muttrc .vimrc .ssh/config
+
+Let's see some examples
+
+== Code
+
+== Editor
+
+Vim (anything non Ceylon and non Java)
+
+== Git
+
+Forget UIs, go command line +
+Set your own aliases and short cuts +
+
+== Git karate
+
+???
+
+== Git custom commands
+
+git-some-command
+
+Let's see some of these
+
+== Tig
+
+"Graphical" UI for Git history and commits +
+Awesome for surgical commit edits
+
+== Licenses
+
+Use the WTFPL! +
+Short enough for scripts
+
+[source]
+--
+# Released under the WTFPL license version 2 http://sam.zoy.org/wtfpl/
+#
+# Copyright (c) 2014 Emmanuel Bernard
+--
