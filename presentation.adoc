@@ -115,6 +115,41 @@ Let's see some of these
 "Graphical" UI for Git history and commits +
 Awesome for surgical commit edits
 
+== Ruby
+
+Ruby hobbyist +
+Hurt by the dependency hell +
+ +
+Use Gemfile, Rakefile and Bundler
+
+== Backups
+
+rsync is awwwwwsommmmmmme +
+Forget Time Machine and all other tools +
+Of course my backups are scripted +
+
+You can do time machine like feature
+
+== Command line all in
+
+== Tmux
+
+Terminal mutiplexer: like terminal tabs but more powerful
+
+Notion of sessions, windows, pane
+
+== Mutt
+
+Write emails in vim +
+Truly offline: mutt reads the local copy synced by offlineimap +
+offlineimap syncs every 10 mins +
+msmtpq queues sent email until there is network +
+
+== Weechat and ZNC
+
+Weechat: IRC client in text +
+ZNC: bouncer - keep history when you are off +
+
 == Licenses
 
 Use the WTFPL! +
@@ -126,3 +161,8 @@ Short enough for scripts
 #
 # Copyright (c) 2014 Emmanuel Bernard
 --
+
+== Conclusion
+
+Invest in your fluidity even at sunken cost +
+You *will* feel faster and happier +
