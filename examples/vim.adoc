@@ -1,0 +1,47 @@
+= Some vim example
+Emmanuel Bernard
+2014-10-24
+
+This file contains some text that will help us explain some of the cool things you can do with:
+
+* a good editor
+* knowledge of your editor
+
+We could add a visual limit at 80 characters to make sure we don't go for lines too long.
+
+We could reformat a wery wery wery wery wery wery wery wery wery wery wery wery long line so that
+it is properly visible in things like the Git / GitHub log or file diff reports. This can be done quite easily frankly using the visual mode. Isn't it wery cool.
+
+But wait, we made the same mistake several times, let's use some regexp.
+
+[source]
+--
+:s/wery/very/g
+--
+
+By the way did you notice the syntax coloring for Asciidoc?
+And did you notice that incorrect vords are in red and underlined?
+We could use the spell checker no?
+
+But coding often involves going from one file to another,
+we need some kind of navigation panel, no?
+Let's use *NERDTree*.
+
+NOTE: I can open files in parallel and see them on the same screen.
+
+Oh and I get all that benefit *everywhere* even on my production machine!
+
+A few more cool things. Let's unquote that email thread.
+
+> A long time ago in a 
+> galaxy far far away
+> bam bam bam bam
+> tada tada tadadaaaaa
+
+By the way, some of vim can be used in the command line.
+
+[source, language="bash"]
+--
+# in ~/.inputrc
+set editing-mode vi
+--
