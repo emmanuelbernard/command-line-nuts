@@ -64,10 +64,11 @@ brew install tmux
 == Editor
 
 Vim +
-  +
+"It was supposed to be called the Pod +
+but Steve was getting the hang of Vim" +
 [source]
 --
-[action][repeatition multiplier]movement
+[action][repetition multiplier]movement
 d2f.
 delete up to the second dot
 --
