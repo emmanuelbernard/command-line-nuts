@@ -1,0 +1,19 @@
+= Backup demo
+Emmanuel Bernard
+2014-10-24
+
+* Show 3way-rsync.sh
+** Show the rsync and options
+** Show `-F` as the `.rsync-filter`
+** Show `~/.rsync-filter`
+* Run a backup
+
+[source, language="bash"]
+--
+3way-rsync.sh examples/ /Users/emmanuel/Documents/projectPres/various/commandline/backup
+--
+
+* show `backup`
+* remove / add `sshconfig-example` in `examples`
+* run backup again
+* show `ll -i` on the two nodes
