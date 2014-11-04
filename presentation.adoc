@@ -43,7 +43,7 @@ It's a lot of fun!
 
 Mac OS X +
   +
-iTerm +
+iTerm 2 +
 Apple Terminal +
 TotalTerminal
 
@@ -94,7 +94,9 @@ Let's see some examples
 
 == Editor
 
-Vim (anything non Ceylon and non Java)
+Vim (anything non Ceylon and non Java) +
+IdeaVim for IntelliJ IDEA +
+Vrapper for Eclipse +
 
 == Git
 
