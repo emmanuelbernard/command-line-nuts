@@ -44,15 +44,16 @@ $rakebin = "_bin#{File::SEPARATOR}forrake"
 $awestruct_cmd = nil
 task :default => :preview
 
-desc 'Build the presentation'
 task :build_deck do
   run_asciidoctor "-T ~/Code/others/asciidoctor/asciidoctor-backends/haml/deckjs presentation.adoc"
 end
 
+desc 'Build the presentation in reveal.js'
 task :build_reveal do
   run_asciidoctor "-T ~/Code/others/asciidoctor/asciidoctor-reveal.js/templates/slim presentation.adoc"
 end
 
+desc 'Enable guard'
 task :guard do
   system "bundle exec guard"
 end
@@ -65,7 +66,7 @@ def run_asciidoctor(args)
 end
 
 
-desc 'Setup the environment to run Awestruct unsing Bundler'
+desc 'Setup the environment for Asciidoctor and guard'
 task :setup, [:env] => :init do |task, args|
   system "bundle install --binstubs=#{$rakebin} --path=.bundle"
   msg 'Run awestruct `rake`'
@@ -73,33 +74,11 @@ task :setup, [:env] => :init do |task, args|
   exit 0
 end
 
-desc 'Update the environment to run Awestruct'
+desc 'Update the environment to run Asciidoctor and guard'
 task :update => :init do
   system 'bundle update'
   # Don't execute any more tasks, need to reset env
   exit 0
-end
-
-desc 'Build and preview the site locally in development mode'
-task :preview do
-  run_awestruct '-d'
-end
-
-desc 'Generate the site using the specified profile, default is \'development\''
-task :gen, :profile do |task, args| 
-  if args[:profile].nil?
-    profile = "development"
-  else
-    profile = args[:profile]
-  end
-  run_awestruct "-P #{profile} -g --force"
-end
-
-desc 'Publish website (requires the right SSH key'
-task :publish do
-  Rake::Task["gen"].execute({:profile => 'production'})
-  cmd = "rsync -avz --delete --filter=\"- /video/\" --filter=\"- /cgi-bin/\" _site/ emmanuelbernard:public_html/lescastcodeurs"
-  system cmd
 end
 
 desc 'Push local commits to origin/master'
@@ -121,14 +100,6 @@ task :clean, :all do |task, args|
   end
 end
 
-# desc 'Run Rspec tests'
-# task :test do
-#   all_ok = system "bundle exec rspec _spec --format nested"
-#   if all_ok == false
-#     fail "RSpec tests failed - aborting build"
-#   end
-# end
-# 
 # Perform initialization steps, such as setting up the PATH
 task :init do
   # Detect using gems local to project
@@ -136,32 +107,6 @@ task :init do
     ENV['PATH'] = "#{$rakebin}#{File::PATH_SEPARATOR}#{ENV['PATH']}"
     ENV['GEM_HOME'] = '.bundle'
   end
-end
-
-desc 'Check to ensure the environment is properly configured'
-task :check => :init do
-  begin
-    require 'bundler'
-    Bundler.setup
-    msg 'Ready to go.'
-  rescue LoadError
-    msg 'Bundler gem not installed. Run \'gem install bundler first\''
-  rescue StandardError => e
-    msg e.message, :warn
-    if which('awestruct').nil?
-      msg 'Run `rake setup` or `rake setup[local]` to install required gems from RubyGems.'
-    else
-      msg 'Run `rake update` to install additional required gems from RubyGems.'
-    end
-    exit e.status_code
-  end
-end
-
-# Execute Awestruct
-def run_awestruct(args)
-  cmd = "bundle exec awestruct #{args}" 
-  msg cmd
-  system cmd or raise "ERROR: Running Awestruct failed."
 end
 
 # A cross-platform means of finding an executable in the $PATH.
