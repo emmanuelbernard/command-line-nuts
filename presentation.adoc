@@ -103,10 +103,6 @@ Vrapper for Eclipse +
 Forget UIs, go command line +
 Set your own aliases and short cuts +
 
-== Git karate
-
-???
-
 == Git custom commands
 
 git-some-command
@@ -118,13 +114,13 @@ Let's see some of these
 "Graphical" UI for Git history and commits +
 Awesome for surgical commit edits
 
-== Ruby
-
-Ruby hobbyist +
-Hurt by the dependency hell +
- +
-Use Gemfile, Rakefile and Bundler
-
+// == Ruby
+// 
+// Ruby hobbyist +
+// Hurt by the dependency hell +
+//  +
+// Use Gemfile, Rakefile and Bundler
+// 
 == Backups
 
 rsync is awwwwwsommmmmmme +
@@ -169,3 +165,5 @@ Short enough for scripts
 
 Invest in your fluidity even at sunken cost +
 You *will* feel faster and happier +
+
+http://github.com/emmanuelbernard/commandline-nuts
