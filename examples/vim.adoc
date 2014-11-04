@@ -45,3 +45,9 @@ By the way, some of vim can be used in the command line.
 # in ~/.inputrc
 set editing-mode vi
 --
+
+[source, language="bash"]
+--
+# my very long command line
+rsync -avz --delete --progress /Some/Obscure/long/source/ /Another/rather/obscure/end
+--
