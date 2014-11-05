@@ -25,7 +25,7 @@ Mac OS X user
 Slow computer +
 Snail IO and Apple Mail atrociously slow +
   +
-Tried to avoid UI as much as possible +
+Tried to avoid GUI as much as possible +
 Started living in terminal
 
 [data-background="images/beard-dark.jpg"]
@@ -60,6 +60,55 @@ brew upgrade
 
 brew install tmux
 --
+
+== Brew list
+
+a2ps                             apache-opennlp                   autoconf213                      betty
+a52dec                           apache-spark                     autoconf264                      bfg
+aacgain                          apachetop                        autoenv                          bgpq3
+aalib                            ape                              autogen                          bgrep
+aamath                           apg                              autojump                         bib-tool
+aardvark_shell_utils             apgdiff                          automake                         bibclean
+abcde                            apib                             automake112                      bibtex2html
+abcl                             apktool                          automoc4                         bibtexconv
+abcm2ps                          apngasm                          automysqlbackup                  bibutils
+abcmidi                          apollo                           autopano-sift-c                  bigdata
+abduco                           app-engine-java-sdk              autopsy                          bigloo
+abnfgen                          apparix                          autossh                          bind
+abook                            apple-gcc42                      autotrace                        bindfs
+ace                              appledoc20                       avce00                           binutils
+aces_container                   appledoc21                       avfs                             binwalk
+ack                              appledoc22                       avian                            bip
+acme                             appscale-tools                   avidemux                         bison
+acpica                           apt-cacher-ng                    aview                            bison27
+activemq                         apt-dater                        avra                             bitchx
+activemq-cpp                     aqbanking                        avrdude                          bitlbee
+admesh                           arabica                          avro-c                           bittwist
+adns                             arangodb                         avro-cpp                         blahtexml
+adobe-air-sdk                    archey                           avro-tools                       blazeblogger
+adplug                           archivemount                     awk                              blink1
+advancecomp                      argp-standalone                  aws-cfn-tools                    blitz
+aescrypt                         argtable                         aws-cloudsearch                  blitzwave
+aespipe                          argus                            aws-elasticache                  blueutil
+afflib                           argus-clients                    aws-elasticbeanstalk             bmake
+afio                             argyll-cms                       aws-sns-cli                      bmon
+afsctool                         aria2                            awscli                           bochs
+aften                            arm                              axel                             bogofilter
+afuse                            arp-scan                         b43-fwcutter                     bokken
+aget                             arp-sk                           babeld                           bonnie++
+aggregate                        arping                           babl                             boost
+aha                              arpoison                         backupninja                      boost-bcp
+ahcpd                            arss                             bacula-fd                        boost-build
+aiccu                            artifactory                      bagit                            boost-python
+aircrack-ng                      ascii                            balance                          boost149
+akka                             asciidoc                         bam                              boot2docker
+alac                             asciitex                         bar                              botan
+aldo                             asm6                             base64                           box2d
+algol68g                         asn1c                            basex                            boxes
+align                            aspcud                           bash                             bpm-tools
+allegro4                         aspell                           bash-completion                  brag
+
+...
 
 == Editor
 
