@@ -12,11 +12,24 @@ We could add a visual limit at 80 characters to make sure we don't go for lines 
 We could reformat a wery wery wery wery wery wery wery wery wery wery wery wery long line so that
 it is properly visible in things like the Git / GitHub log or file diff reports. This can be done quite easily frankly using the visual mode. Isn't it wery cool.
 
+Or it could be
+that our lines are too
+short. Let's J them to
+fix this.
+
 But wait, we made the same mistake several times, let's use some regexp.
 
 [source]
 --
 :s/wery/very/g
+--
+
+Noe more cool thing, let's replace the content of a string...
+or the parameters of a method.
+
+[source]
+--
+System.out.println("Good bye old friend");
 --
 
 By the way did you notice the syntax coloring for Asciidoc?
@@ -30,13 +43,6 @@ Let's use *NERDTree*.
 NOTE: I can open files in parallel and see them on the same screen.
 
 Oh and I get all that benefit *everywhere* even on my production machine!
-
-A few more cool things. Let's unquote that email thread.
-
-> A long time ago in a 
-> galaxy far far away
-> bam bam bam bam
-> tada tada tadadaaaaa
 
 By the way, some of vim can be used in the command line.
 
