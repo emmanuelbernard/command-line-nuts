@@ -19,12 +19,7 @@ fix this.
 
 But wait, we made the same mistake several times, let's use some regexp.
 
-[source]
---
-:s/wery/very/g
---
-
-Noe more cool thing, let's replace the content of a string...
+One more cool thing, let's replace the content of a string...
 or the parameters of a method.
 
 [source]
