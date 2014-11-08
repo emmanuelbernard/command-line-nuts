@@ -1,0 +1,4 @@
+= Read me
+Emmanuel Bernard
+
+Git repository containing the command line nuts presentation and samples.
