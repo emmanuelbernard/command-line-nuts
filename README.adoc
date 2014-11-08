@@ -2,3 +2,45 @@
 Emmanuel Bernard
 
 Git repository containing the command line nuts presentation and samples.
+
+== How to build the presentation
+
+The presentation is based on the Asciidoctor reveal.js backend.
+
+=== Setup
+
+You need Ruby (tested on 2.1), and make sure you have Bundler and Rake installed
+
+[source, language="bash"]
+--
+gem install bundler
+gem install rake
+--
+
+Then install the necessary gems
+
+[source, language="bash"]
+--
+rake setup
+--
+
+=== Generating the presentation
+
+[source, language="bash"]
+--
+rake build_reveal
+--
+
+=== Generating the presentation on every change
+
+
+[source, language="bash"]
+--
+rake guard
+--
+
+Also install the live reload plugin from Chrome and activate it when displaying the presentation.
+
+== License
+
+Release under the WTFPL 2.0 available in LICENSE.txt
