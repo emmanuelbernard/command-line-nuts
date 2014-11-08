@@ -210,4 +210,4 @@ ZNC: bouncer - keep history when you are off +
 Invest in your fluidity even at sunken cost +
 You *will* feel faster and happier +
 
-http://github.com/emmanuelbernard/commandline-nuts
+http://github.com/emmanuelbernard/command-line-nuts
