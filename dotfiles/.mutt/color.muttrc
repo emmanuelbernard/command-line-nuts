@@ -1,0 +1,21 @@
+color header cyan default .
+color header yellow black ^From
+color header yellow black ^Subject
+color body yellow black [_a-z\.\$A-Z0-9-]+@[a-zA-Z0-9\./\-]+
+color body yellow black (http|ftp)://[_a-zA-Z0-9\?\=\&\@\%\#\:\,\./~\-]+
+color quoted green black
+color quoted1 cyan black
+color quoted2 yellow black
+color signature cyan black
+color attachment yellow black
+color tree white black
+color indicator black cyan
+color status yellow blue
+color tilde blue black
+color normal white black
+color index green black ~N
+color index green black ~O
+color index red black ~D
+color search black yellow
+color index black yellow ~F
+color sidebar_new yellow default

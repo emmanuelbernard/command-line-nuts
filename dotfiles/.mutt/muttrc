@@ -1,0 +1,111 @@
+#sett move=ask-no
+set move=no
+
+source ~/.mutt/color-light.muttrc
+
+# use vim + cursor function
+set editor="vim "
+
+set mbox_type=Maildir
+set folder=$HOME/Mail
+set spoolfile=+myemailaccountname/INBOX
+
+# SMTP
+set realname="Emmanuel Bernard"
+set sendmail_wait = -1
+set edit_headers=yes
+set envelope_from = yes
+
+folder-hook . set record=+myemailaccountname/INBOX.Sent
+folder-hook . set sendmail = '"$HOME/usr/local/bin/shared/msmtpq -a myemailaccountname"'
+folder-hook . set from="emmanuel@myemailaccount.com"
+folder-hook . set postponed=+myemailaccountname/INBOX.Drafts
+folder-hook . set trash=+myemailaccountname/INBOX.Trash
+
+folder-hook myemailaccountname set record=+myemailaccountname/INBOX.Sent
+folder-hook myemailaccountname set sendmail = '"$HOME/usr/local/bin/shared/msmtpq -a hibernate"'
+folder-hook myemailaccountname set from="emmanuel@hibernate.org"
+folder-hook myemailaccountname set postponed=+myemailaccountname/INBOX.Drafts
+folder-hook myemailaccountname set trash=+myemailaccountname/INBOX.Trash
+folder-hook myemailaccountname set hostname=myemailaccount.com
+
+# Mu (search) integration
+macro index <F8> "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Mail/search " "mu find"
+macro index <F9> "<change-folder-readonly>~/Mail/search" "mu find results"
+
+# urlview integration
+macro index \cb "|urlview\n" "open url with urlview"
+macro pager \cb "|urlview\n" "open url with urlview"
+
+# Sidebar
+set sidebar_width=36
+set sidebar_visible=yes
+# Those two do not seem to work
+# set sidebar-format = "%B - %N"
+# set sidebar-folderident = yes
+
+
+# cache
+set header_cache = $HOME/Mail/cache
+
+# behaviors options
+set mark_old = no
+set recall=no
+set sort=threads
+set sort_aux=last-date-received
+set implicit_autoview = yes
+auto_view text/html
+alternative_order text/enriched text/plain text/html
+
+set pager_index_lines=8
+set tilde
+
+set timeout=10    # press artificially a key after 10 seconds
+set mail_check=5  # mutt checks for new mails on every keystrokes
+                  # but not more often then once in 5 seconds
+set beep_new      # beep on new messages in the mailboxes
+
+ignore *   # with only that, no mail - headers should get shown normally
+unignore From: To: subject date  cc reply-to  # I want these to see
+unignore User-Agent:
+
+# set index_format=”%?M?+& ?%2M %2e %Z %D %-20.20F (%4c) %s”
+#                 "%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
+set index_format="%?M?+& ?%2M %4C | %Z | %D | %-20.20F | %s"
+set date_format="!%a %Y-%m-%d %k:%M"
+set mime_forward=ask-yes
+set forward_decode=no
+set forward_format="Fwd: %s"
+set pager_context=5
+hdr_order From: Date: To: Cc: Subject:
+set delete = yes
+
+# Key binding
+bind index - collapse-thread
+# ctrl-n, ctrl-p to select next, prev folder
+# ctrl-o to open selected folder
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind index \CL sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
+bind pager \CL sidebar-open
+# b toggles sidebar visibility
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+# Remap bounce-message function to “B”
+bind index B bounce-message
+bind generic L bottom-page
+bind generic M middle-page
+bind generic H top-page
+bind index [ previous-unread
+bind index ] next-unread
+bind pager [ previous-unread
+bind pager ] next-unread
+bind pager <up> previous-line
+bind pager <down> next-line
+
+# GPG
+# set crypt_use_gpgme=yes

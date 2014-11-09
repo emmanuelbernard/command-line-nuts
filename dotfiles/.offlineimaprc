@@ -1,0 +1,31 @@
+[general]
+accounts = myemailaccountname
+maxsyncaccounts = 2
+socktimeout = 15
+fsync = false
+
+[mbnames]
+enabled = yes
+# filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
+
+[Account myemailaccountname]
+localrepository=LocalMyemailaccountname
+remoterepository=RemoteMyemailaccountname
+maxage = 60
+
+[Repository LocalMyemailaccountname]
+type = Maildir
+localfolders = ~/Mail/myemailaccountname
+
+[Repository RemoteMyemailaccountname]
+type = IMAP
+remotehost = mail.myemailaccount.com
+remoteuser = emmanuel
+ssl = yes
+maxconnections = 1
+cert_fingerprint = 123456789012345678901234567890123456789
+folderfilter = lambda foldername: foldername in ['INBOX', 'INBOX.dev', 'INBOX.Sent', 'INBOX.Trash', 'INBOX.Drafts']

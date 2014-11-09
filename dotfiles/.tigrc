@@ -1,0 +1,5 @@
+# do a hard reset on the selected commit
+bind main r !git reset --hard %(commit) 
+
+# push the current branch to a remote. tig prompts for the remote
+bind main p !git push %(prompt) %(branch)

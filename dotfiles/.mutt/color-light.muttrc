@@ -1,0 +1,72 @@
+#
+# colors
+#
+
+# combinations:
+# green: color28 color194
+# red: color124 color223
+# magenta: color90 color225
+# yellow: color214 color230 (unreadable)
+# orange: color202 color230
+# blue: color20 color153
+# blue: color33 color153
+
+#set arrow_cursor
+color normal black color231
+color status color123 color245
+color error red color231
+color indicator color202 color230
+color index color18 color231 ~A
+color tree color18 color231
+color index color26 color231 "~P" # from me
+color index color124 color223 "~F" # flagged
+color index color28 color194 "~N | ~O"
+color index color90 color182 ~T
+color index color88 color225 ~D
+color sidebar_new color28 color194
+color header color18 color253 .
+color signature brightblack color231
+color attachment color90 color225 
+color quoted color20 color231
+color quoted1 color52 color231
+color quoted2 color22 color231
+color quoted3 magenta color231
+color quoted4 yellow color231
+color body color27 color231 (https?|ftp|news|irc)://[_a-zA-Zäöü0-9%\\.,/~\\-\\?\\=@\#&+:-]+ # URLs
+color body color27 color231 www\\.[_a-zA-Zäöü0-9\\.~\\-]+\\.,[_a-zA-Z0-9\\.~\\-]{2,4} # domain names
+color body color27 color231 [_a-zA-Z0-9\\.~\\-]+@[_a-zA-Z0-9\\.~\\-]+\\.[_a-zA-Z0-9\\.~\\-]{2,4} # eMail adresses
+color body color20 color255 \\[---\\=\\|.*\\|\\=---\\]
+color body color90 color225 "^gpg: .*"
+color body color90 color225 "^Primary key fingerprint: .*"
+color body color28 color194 "^gpg: Good signature.*"
+color body color124 color223 "^(gpg: (Can't check signature|BAD signature from.*|WARNING: This key is not certified with a trusted signature!|         There is no indication that the signature belongs to the owner.)|Verification failure).*"
+
+
+#color normal black color231
+#color status color123 color36
+#color error red color231
+#color indicator color28 color194
+#color index color18 color153 ~A
+#color tree color18 color153
+#color index color26 color153 "~P" # from me
+#color index color124 color223 "~F" # flagged
+#color index color202 color230 "~N | ~O"
+#color index color90 color182 ~T
+#color index color18 color250 ~D
+#color sidebar_new color202 color230
+#color header color18 color153 .
+#color signature brightblack color231
+#color attachment color90 color225 
+#color quoted blue color231
+#color quoted1 red color231
+#color quoted2 green color231
+#color quoted3 magenta color231
+#color quoted4 yellow color231
+#color body color27 color231 (https?|ftp|news|irc)://[_a-zA-Zäöü0-9%\\.,/~\\-\\?\\=@\#&+:-]+ # URLs
+#color body color27 color231 www\\.[_a-zA-Zäöü0-9\\.~\\-]+\\.,[_a-zA-Z0-9\\.~\\-]{2,4} # domain names
+#color body color27 color231 [_a-zA-Z0-9\\.~\\-]+@[_a-zA-Z0-9\\.~\\-]+\\.[_a-zA-Z0-9\\.~\\-]{2,4} # eMail adresses
+#color body color20 color255 \\[---\\=\\|.*\\|\\=---\\]
+#color body color90 color225 "^gpg: .*"
+#color body color90 color225 "^Primary key fingerprint: .*"
+#color body color28 color194 "^gpg: Good signature.*"
+#color body color124 color223 "^(gpg: (Can't check signature|BAD signature from.*|WARNING: This key is not certified with a trusted signature!|         There is no indication that the signature belongs to the owner.)|Verification failure).*"
