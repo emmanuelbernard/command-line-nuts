@@ -1,0 +1,28 @@
+#!/bin/bash
+# Script to loop on local and remote branches, to delete all those which are
+# already merged in master.
+# Assumes "$USER" as your remote repository and "master" as your main branch.
+# Careful if you use branches as tags!
+#
+# Inspired from http://devblog.springest.com/a-script-to-remove-old-git-branches
+# Released under the WTFPL license version 2 http://sam.zoy.org/wtfpl/
+# Copyright (c) 2012 Sanne Grinovero
+# Copyright (c) 2012 Emmanuel Bernard - made remote repo parameterized
+
+if [[ $# -eq 0 ]]; then 
+  own_remote=$USER
+elif [[ $# -eq 1 ]]; then
+  own_remote="$1"
+else
+  echo "Error: only accept one parameter - the remote name to consider"
+  exit 1;
+fi
+
+# Prune stale references to remote, and fetch information on new branches:
+git fetch $own_remote --prune
+
+# Delete local branches which are merged in master
+git branch --merged master | grep -v 'master$' | xargs git branch -d
+
+# Remove remote fully merged branches
+git branch -r --merged master | grep "$own_remote/" | grep -v "$own_remote/master" | sed -e "s/\s*$own_remote\///" | xargs -I% git push $own_remote :%

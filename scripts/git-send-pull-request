@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Released under the WTFPL license version 2 http://sam.zoy.org/wtfpl/
+#
+# Copyright (c) 2012 Sanne Grinovero
+
+# Open a pull request pushing branch to the repo $USER and opening the pull request page
+#
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
+}
+
+function git_project_id {
+  git remote --verbose 2>/dev/null | grep $USER | sed -e "s/$USER\(.*\)git@github.com:\(.*\)\.git.*/\2/" | uniq -d
+}
+
+BRANCH=$(parse_git_branch)
+PROJ=$(git_project_id)
+echo " project id: $PROJ"
+URL=https://github.com/$PROJ/compare/$BRANCH?expand=1
+echo Prepare pull request $BRANCH to $URL
+git push $USER $BRANCH
+open $URL

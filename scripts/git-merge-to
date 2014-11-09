@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# Released under the WTFPL license version 2 http://sam.zoy.org/wtfpl/
+#
+# Copyright (c) 2012 Emmanuel Bernard
+
+#not the right amount of params => help
+BRANCH=`git branch | grep "*" | awk '{print $NF}'`
+
+if [[ $# -eq 0 ]]; then 
+  TARGET="master"
+elif [[ $# -eq 1 ]]; then
+  TARGET="$1"
+else
+  echo "apply-to-master [target branch]"
+  exit 1;
+fi
+
+echo "Merging $BRANCH in $TARGET"
+
+# if the branch exists ask before erasing it
+git branch --merged | grep -q $TARGET
+if [[ $? -ne 0 ]]; then
+	echo "$TARGET cannot be fast forwarded to $BRANCH"
+  exit 2;
+fi
+
+jira
+
+git checkout $TARGET
+git merge $BRANCH
+
+read -p "Erase local branch $BRANCH? " yn
+  case $yn in
+    [Nn]* ) exit 0;;
+      [Yy]* ) git branch -D $BRANCH;;
+      * ) echo "Please answer yes or no.";;
+  esac

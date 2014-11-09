@@ -1,0 +1,35 @@
+#!/bin/bash
+# This script will look into the GIT commit log of the current directory, backwards since the branch
+# from master, searching for references to JIRA issues of a set of known projects.
+# It will then open all relevant issues in different tabs of Firefox: this is useful
+# in my workflow as I often want to comment and/or close the issues when merging work in upstream.
+#
+# Released under the WTFPL license version 2 http://sam.zoy.org/wtfpl/
+#
+# Copyright (c) 2011 Sanne Grinovero
+
+seeProjectIssues() {
+   BRANCHES=$(git log master.. --no-decorate  | grep -o -E $PROJECTCODE-[0-9]+ | sort | uniq)
+   for ISSUE in $(echo $BRANCHES | tr ";" "\n")
+   do
+      open $JIRA_SERVER/browse/$ISSUE
+   done
+}
+
+JIRA_SERVER="https://hibernate.atlassian.net"
+for PROJECTCODE in "HSEARCH" "HHH" "OGM" "BVAL" "BVTCK" "HCANN" "METAGEN" "JPA" "ANN" "EJB"
+do
+   seeProjectIssues
+done
+
+JIRA_SERVER="https://issues.jboss.org"
+for PROJECTCODE in "ISPN" "JGRP"
+do
+   seeProjectIssues
+done
+
+JIRA_SERVER="https://issues.apache.org/jira"
+for PROJECTCODE in "LUCENE" "SOLR"
+do
+   seeProjectIssues
+done

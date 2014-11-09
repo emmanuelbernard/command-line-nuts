@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Released under the WTFPL license version 2 http://sam.zoy.org/wtfpl/
+#
+# Copyright (c) 2012 Emmanuel Bernard
+LENGTH=`expr ${#USER} + 1 + 3`
+
+git branch -r | \
+  grep "$USER" | \
+  grep -v "master" | \
+  awk -v l=$LENGTH -v u=$USER '{print "git push " u " :" substr($0,l)}' > git-clean-remote.out
+
+source git-clean-remote.out
+rm git-clean-remote.out

@@ -1,0 +1,56 @@
+#!/bin/bash
+#
+# Released under the WTFPL license version 2 http://sam.zoy.org/wtfpl/
+#
+# Copyright (c) 2012 Emmanuel Bernard
+
+#not the right amount of params => help
+if [[ $# -ne 2 ]]; then 
+  echo "Create or update localbranch based on remote branch"
+  echo -e "\tgit upsert remote branch"
+  echo -e "\tgit upsert remote local:remote"
+  exit 0;
+fi
+
+PARAM2="$2"
+BRANCHES=(${PARAM2//:/ })
+
+if [[ ${#BRANCHES[@]} -eq 1 ]]; then
+  LOCAL=${BRANCHES[0]}
+  REMOTE=${BRANCHES[0]} 
+elif [[ ${#BRANCHES[@]} -eq 2 ]]; then
+  LOCAL=${BRANCHES[0]}
+  REMOTE=${BRANCHES[1]}
+fi
+
+REPO=$1
+
+echo "Creating branch $LOCAL from $REPO/$REMOTE"
+
+# if the branch exists ask before erasing it
+git branch | grep -q $LOCAL
+if [[ $? -eq 0 ]]; then
+	read -p "Branch $LOCAL already exists, do you want to erase it? " yn
+    case $yn in
+    	[Nn]* ) exit 0;;
+        [Yy]* ) git checkout -b tempbranchfor$LOCAL; git branch -D $LOCAL;;
+        * ) echo "Please answer yes or no.";;
+    esac
+fi
+
+# fetch and verify the branch exists in the remote
+git fetch $REPO
+git branch -a | grep -q $REPO/$REMOTE
+if [[ $? -ne 0 ]]; then
+	echo "Cannot find branch $REPO/$REMOTE"
+	exit 1;
+fi
+
+# create local branch
+git checkout -b $LOCAL $REPO/$REMOTE
+
+# if temp branch created, erase it
+git branch -a | grep -q tempbranchfor$LOCAL
+if [[ $? -eq 0 ]]; then
+	git branch -D tempbranchfor$LOCAL
+fi
