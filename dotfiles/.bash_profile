@@ -35,7 +35,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/Applications/Sublime\ Text\ 2.app/Contents/
 PATH=~/usr/local/bin:~/usr/local/bin/shared:$PATH
 
 #Keychain / ssh-agent
-# if not in the agent, prompt for th ekey to be added
+# if not in the agent, prompt for the key to be added
 ssh-add -l | grep 4096 | grep --quiet id_rsa
 if [[ "$?" -ne "0" ]]; then
   ssh-add ~/.ssh/id_rsa
