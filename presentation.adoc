@@ -48,6 +48,8 @@ Short enough for scripts
 # Copyright (c) 2014 Emmanuel Bernard
 --
 
+Everything is on GitHub.
+
 == Fundamentals
 
 == Terminal
@@ -180,10 +182,17 @@ Awesome for surgical commit edits
 == Backups
 
 rsync is awwwwwsommmmmmme +
-Forget Time Machine and all other tools +
+Forget all other tools +
 Of course my backups are scripted +
 
 You can do time machine like feature
+
+[source, language="bash"]
+--
+rsync --archive --verbose --one-file-system --hard-links \
+    --human-readable --inplace --numeric-ids -F \
+    --link-dest="backup/last" "source" "backup/timestamp"
+--
 
 == Command line all in
 
