@@ -154,6 +154,7 @@ For example .bash_profile .muttrc .vimrc .ssh/config
 Learn _bash_ (or _PowerShell_) +
  +
 Automate everything with repeatable steps. +
+Follow https://twitter.com/evilbashtips[@evilbashtips]
 
 == Code
 
