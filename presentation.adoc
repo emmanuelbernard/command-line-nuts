@@ -133,18 +133,18 @@ d2f.
 delete up to the second dot
 --
 
-== Automate! Automate! Automate!
-
-Learn _bash_ (or _PowerShell_) +
-  +
-Example of http://lescastcodeurs.com[Les Cast Codeurs] release script
-
 == Learn your dotfiles
 
 Store them in Git +
 Get a new machine much faster and consistent
 
 For example .bash_profile .muttrc .vimrc .ssh/config
+
+== Automate! Automate! Automate!
+
+Learn _bash_ (or _PowerShell_) +
+ +
+Automate everything with repeatable steps. +
 
 == Code
 
