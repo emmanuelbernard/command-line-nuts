@@ -1,3 +1,6 @@
 .bundle
 .rvmrc
 _bin
+.DS_Store
+/*.html
+
