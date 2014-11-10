@@ -1,7 +1,7 @@
 = Command line nuts
 Emmanuel Bernard
 :backend: revealjs
-:revealjs_theme: night
+:revealjs_theme: moon
 :revealjs_controls: false
 :revealjs_progress: false
 :revealjs_history: true
