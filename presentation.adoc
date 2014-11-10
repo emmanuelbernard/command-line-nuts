@@ -124,6 +124,12 @@ allegro4                         aspell                           bash-completio
 
 ...
 
+== Tmux
+
+Terminal mutiplexer: like terminal tabs but more powerful
+
+Notion of sessions, windows, pane
+
 == Editor
 
 Vim +
@@ -196,12 +202,6 @@ rsync --archive --verbose --one-file-system --hard-links \
 --
 
 == Command line all in
-
-== Tmux
-
-Terminal mutiplexer: like terminal tabs but more powerful
-
-Notion of sessions, windows, pane
 
 == Mutt
 
