@@ -48,7 +48,8 @@ Short enough for scripts
 # Copyright (c) 2014 Emmanuel Bernard
 --
 
-Everything is on GitHub.
+Everything is on GitHub. +
+http://github.com/emmanuelbernard/command-line-nuts
 
 == Fundamentals
 
