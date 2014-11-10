@@ -210,10 +210,9 @@ Truly offline: mutt reads the local copy synced by offlineimap +
 offlineimap syncs every 10 mins +
 msmtpq queues sent email until there is network +
 
-== Weechat and ZNC
+== IRC: Weechat
 
 Weechat: IRC client in text +
-ZNC: bouncer - keep history when you are off +
 
 == Conclusion
 
