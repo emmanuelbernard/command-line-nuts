@@ -5,7 +5,7 @@
 # Note that you can work on the next bug while this is going on as
 # tests are run off a cloned repo.
 #
-# $ remote.sh mvn clean install
+# $ remote mvn clean install
 # runs 'mvn clean install'
 #
 # A notification is sent upon build completion if your OS supports it:
@@ -62,7 +62,7 @@ say() {
 }
 
 if [[ $# -eq 0 ]]; then 
-  echo "Usage remote.sh <command to run>"
+  echo "Usage remote <command to run>"
 else
   CMD_DISPLAY="$@"
 fi
