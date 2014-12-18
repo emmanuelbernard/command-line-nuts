@@ -58,6 +58,12 @@ task :guard do
   system "bundle exec guard"
 end
 
+task :pdf do
+  cmd = "bundle exec asciidoctor-pdf presentation.adoc"
+  msg cmd
+  system cmd or raise "ERROR: Running Asciidoctor PDF failed."
+end
+
 # Execute Asciidoctor
 def run_asciidoctor(args)
   cmd = "bundle exec asciidoctor #{args}" 
