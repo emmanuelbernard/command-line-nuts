@@ -33,8 +33,9 @@ else
 fi
 
 $@
+EXIT_CODE=$?
 
-if [ $? -eq 0 ]; then
+if [ $EXIT_CODE -eq 0 ]; then
   RESULT="SUCCESS"
   echo $RESULT    
   say
@@ -42,5 +43,5 @@ else
   RESULT="FAILURE"
   echo $RESULT
   say
-  exit $?
+  exit $EXIT_CODE
 fi
