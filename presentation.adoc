@@ -11,7 +11,7 @@ Emmanuel Bernard
 
 == Command line nuts
 
-Give yourself to the +#bash+ side +
+Give yourshell to the +#bash+ side +
 
 == Emmanuel Bernard
 
